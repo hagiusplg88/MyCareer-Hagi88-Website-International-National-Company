@@ -55,7 +55,7 @@ body.bg-custom {
 }
 
 .dashboard-container {
-  max-width: 950px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -113,26 +113,60 @@ body.bg-custom {
   opacity: 0.8;
 }
 
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+.dashboard-single {
+  display: flex;
+  justify-content: center;
 }
 
 .card {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 20px;
+  padding: 25px;
   box-shadow: var(--shadow);
+  width: 100%;
   transition: background-color 0.3s, border-color 0.3s;
 }
 
 .card h2 {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
   border-bottom: 2px solid var(--border-color);
-  padding-bottom: 5px;
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+/* Career Links Styling */
+.career-links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.career-link-btn {
+  display: block;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: transform 0.2s, opacity 0.2s;
+  color: white;
+}
+
+.career-link-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.international-btn {
+  background: linear-gradient(135deg, #2b5876, #4e4376);
+}
+
+.national-btn {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+  color: #111;
 }
 
 /* Buttons */
@@ -149,53 +183,4 @@ button:hover {
   opacity: 0.85;
 }
 
-.btn-primary { background-color: var(--primary-color); color: white; }
 .btn-secondary { background-color: #6c757d; color: white; }
-.btn-warning { background-color: #ffc107; color: black; }
-.btn-danger { background-color: #dc3545; color: white; }
-
-/* Focus Timer */
-.focus-timer-card { text-align: center; }
-.timer-display {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin: 15px 0;
-}
-.timer-controls button { margin: 0 5px; }
-
-/* Forms & Inputs */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 15px;
-}
-
-input[type="text"], input[type="url"] {
-  padding: 8px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  background-color: var(--card-bg);
-  color: var(--text-color);
-}
-
-/* Lists */
-ul { list-style: none; }
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px;
-  border-bottom: 1px solid var(--border-color);
-}
-
-.todo-item.completed span {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
-.error-text {
-  color: #dc3545;
-  font-size: 0.85rem;
-  margin-bottom: 10px;
-}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do List Life Dashboard</title>
+  <title>Career Quick Links Dashboard</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-default">
@@ -26,9 +26,7 @@
             <option value="bg-custom">Custom Image URL</option>
           </select>
         </div>
-        <!-- Input tambahan untuk Custom Image URL -->
         <input type="url" id="bg-url-input" placeholder="Paste URL gambar..." style="display: none;" />
-        
         <button id="theme-toggle-btn" class="btn-secondary">🌙 Dark Mode</button>
       </div>
     </header>
@@ -40,43 +38,21 @@
       <p id="date-text">Senin, 1 Januari 2026</p>
     </section>
 
-    <!-- Main Grid Layout -->
-    <main class="dashboard-grid">
-      
-      <!-- Focus Timer (Pomodoro) -->
-      <section class="card focus-timer-card">
-        <h2>⏱️ Focus Timer</h2>
-        <div class="timer-display" id="timer-display">25:00</div>
-        <div class="timer-controls">
-          <button id="start-timer-btn" class="btn-primary">Start</button>
-          <button id="stop-timer-btn" class="btn-warning">Stop</button>
-          <button id="reset-timer-btn" class="btn-danger">Reset</button>
+    <!-- Main Layout (Hanya Quick Links Career) -->
+    <main class="dashboard-single">
+      <section class="card quick-links-card">
+        <h2>🔗 Quick Links Career</h2>
+        <div class="career-links-container">
+          <a href="https://www.linkedin.com/jobs" target="_blank" class="career-link-btn international-btn">
+            🌐 International Company Career
+          </a>
+          <a href="https://www.jobstreet.co.id" target="_blank" class="career-link-btn national-btn">
+            🇮🇩 National Company Career
+          </a>
         </div>
       </section>
-
-      <!-- Quick Links Section -->
-      <section class="card quick-links-card">
-        <h2>🔗 Quick Links</h2>
-        <form id="add-link-form">
-          <input type="text" id="link-title-input" placeholder="Nama Website (misal: Google)" required>
-          <input type="url" id="link-url-input" placeholder="URL (https://...)" required>
-          <button type="submit" class="btn-primary">Tambah Link</button>
-        </form>
-        <ul id="quick-links-list" class="links-list"></ul>
-      </section>
-
-      <!-- To-Do List Section -->
-      <section class="card todo-card">
-        <h2>📋 To-Do List</h2>
-        <form id="add-todo-form">
-          <input type="text" id="todo-input" placeholder="Tambah tugas baru..." required>
-          <button type="submit" class="btn-primary">Tambah</button>
-        </form>
-        <p id="todo-error-msg" class="error-text"></p>
-        <ul id="todo-list" class="todo-list"></ul>
-      </section>
-
     </main>
+
   </div>
 
   <script src="js/app.js"></script>
