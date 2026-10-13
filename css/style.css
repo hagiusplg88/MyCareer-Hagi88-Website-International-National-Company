@@ -1,21 +1,17 @@
 :root {
   --bg-color: #f4f7f6;
   --card-bg: #ffffff;
-  --text-color: #333333;
-  --primary-color: #4a90e2;
-  --primary-hover: #357abd;
-  --border-color: #e0e0e0;
-  --shadow: 0 4px 6px rgba(0,0,0,0.05);
+  --text-color: #111111;
+  --border-color: #dddddd;
+  --shadow: 0 4px 6px rgba(0,0,0,0.08);
 }
 
 body.dark-mode {
   --bg-color: #121212;
   --card-bg: #1e1e1e;
-  --text-color: #e0e0e0;
-  --primary-color: #bb86fc;
-  --primary-hover: #9955e8;
+  --text-color: #ffffff;
   --border-color: #333333;
-  --shadow: 0 4px 6px rgba(0,0,0,0.3);
+  --shadow: 0 4px 6px rgba(0,0,0,0.4);
 }
 
 * {
@@ -30,32 +26,11 @@ body {
   color: var(--text-color);
   padding: 20px;
   min-height: 100vh;
-  transition: background 0.4s ease, background-color 0.4s ease, color 0.3s;
-}
-
-/* Background Theme Variations */
-body.bg-default {
-  background-color: var(--bg-color);
-}
-
-body.bg-gradient {
-  background: linear-gradient(135deg, #1f4068, #162447, #1b1b2f);
-  background-attachment: fixed;
-}
-
-body.bg-industrial {
-  background: linear-gradient(135deg, #0b132b, #1c2541, #3a506b);
-  background-attachment: fixed;
-}
-
-body.bg-custom {
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .dashboard-container {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -63,116 +38,81 @@ body.bg-custom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-.top-controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.user-name-container input,
-.bg-selector-container select,
-#bg-url-input {
-  padding: 6px 10px;
+.user-name-container input {
+  padding: 8px 12px;
   border: 1px solid var(--border-color);
   border-radius: 4px;
   background-color: var(--card-bg);
   color: var(--text-color);
 }
 
-.bg-selector-container {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.9rem;
-}
-
 .greeting-section {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .greeting-section h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   margin-bottom: 5px;
 }
 
 #clock-text {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: bold;
-  color: var(--primary-color);
+  color: #ff9800; /* Warna Jingga khas jam */
 }
 
 #date-text {
-  font-size: 1rem;
+  font-size: 1.1rem;
   opacity: 0.8;
 }
 
-.dashboard-single {
-  display: flex;
-  justify-content: center;
+.dashboard-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
 }
 
 .card {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 25px;
+  padding: 22px;
   box-shadow: var(--shadow);
-  width: 100%;
-  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .card h2 {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
   border-bottom: 2px solid var(--border-color);
   padding-bottom: 8px;
-  text-align: center;
 }
 
-/* Career Links Styling */
-.career-links-container {
+/* Forms & Inputs */
+form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.career-link-btn {
-  display: block;
-  text-align: center;
-  padding: 15px 20px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: transform 0.2s, opacity 0.2s;
-  color: white;
+input[type="text"], input[type="url"] {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
 }
 
-.career-link-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-.international-btn {
-  background: linear-gradient(135deg, #2b5876, #4e4376);
-}
-
-.national-btn {
-  background: linear-gradient(135deg, #11998e, #38ef7d);
-  color: #111;
-}
-
-/* Buttons */
+/* Custom Color Buttons (Merah, Jingga, Kuning, Putih, Hitam) */
 button {
   cursor: pointer;
-  padding: 8px 12px;
+  padding: 9px 14px;
   border: none;
   border-radius: 4px;
   font-weight: bold;
@@ -183,4 +123,29 @@ button:hover {
   opacity: 0.85;
 }
 
-.btn-secondary { background-color: #6c757d; color: white; }
+.btn-orange { background-color: #ff9800; color: #111; }
+.btn-yellow { background-color: #ffeb3b; color: #111; }
+.btn-red { background-color: #f44336; color: #fff; }
+.btn-secondary { background-color: #333; color: #fff; border: 1px solid #555; }
+body:not(.dark-mode) .btn-secondary { background-color: #e0e0e0; color: #111; }
+
+/* Links List */
+ul { list-style: none; }
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+li a:hover {
+  text-decoration: underline;
+  color: #ff9800;
+}
