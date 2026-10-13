@@ -2,7 +2,7 @@
   --bg-color: #f4f7f6;
   --card-bg: #ffffff;
   --text-color: #111111;
-  --border-color: #dddddd;
+  --border-color: #ff3333; /* Pinggiran merah */
   --shadow: 0 4px 6px rgba(0,0,0,0.08);
 }
 
@@ -10,7 +10,7 @@ body.dark-mode {
   --bg-color: #121212;
   --card-bg: #1e1e1e;
   --text-color: #ffffff;
-  --border-color: #333333;
+  --border-color: #ff3333; /* Pinggiran merah untuk dark mode */
   --shadow: 0 4px 6px rgba(0,0,0,0.4);
 }
 
@@ -45,7 +45,7 @@ body {
 
 .user-name-container input {
   padding: 8px 12px;
-  border: 1px solid var(--border-color);
+  border: 1px solid #555;
   border-radius: 4px;
   background-color: var(--card-bg);
   color: var(--text-color);
@@ -64,7 +64,7 @@ body {
 #clock-text {
   font-size: 3rem;
   font-weight: bold;
-  color: #ff9800; /* Warna Jingga khas jam */
+  color: #ff9800;
 }
 
 #date-text {
@@ -78,9 +78,10 @@ body {
   gap: 25px;
 }
 
+/* Card dengan pinggiran (border) merah */
 .card {
   background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
+  border: 2px solid var(--border-color);
   border-radius: 8px;
   padding: 22px;
   box-shadow: var(--shadow);
@@ -89,7 +90,7 @@ body {
 .card h2 {
   font-size: 1.25rem;
   margin-bottom: 15px;
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 2px solid #333;
   padding-bottom: 8px;
 }
 
@@ -103,13 +104,13 @@ form {
 
 input[type="text"], input[type="url"] {
   padding: 10px;
-  border: 1px solid var(--border-color);
+  border: 1px solid #444;
   border-radius: 4px;
   background-color: var(--card-bg);
   color: var(--text-color);
 }
 
-/* Custom Color Buttons (Merah, Jingga, Kuning, Putih, Hitam) */
+/* Tombol */
 button {
   cursor: pointer;
   padding: 9px 14px;
@@ -136,7 +137,7 @@ li {
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid #333;
 }
 
 li a {

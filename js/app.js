@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
   });
 
-  // --- 2. GREETING & CLOCK (WAKTU INDONESIA: PAGI, SIANG, SORE, MALAM) ---
+  // --- 2. GREETING & CLOCK (PENYESUAIAN RENTANG WAKTU RUMUS KUSTOM) ---
   const greetingText = document.getElementById('greeting-text');
   const clockText = document.getElementById('clock-text');
   const dateText = document.getElementById('date-text');
@@ -39,25 +39,28 @@ document.addEventListener('DOMContentLoaded', () => {
     let name = localStorage.getItem('username');
     let nameSuffix = name ? `, ${name}` : '';
     
-    // Penyesuaian Waktu Indonesia
-    let timeGreeting = 'Selamat Pagi';
-    if (hours >= 12 && hours < 15) {
-      timeGreeting = 'Selamat Siang';
-    } else if (hours >= 15 && hours < 18) {
-      timeGreeting = 'Selamat Sore';
-    } else if (hours >= 18 || hours < 5) {
-      timeGreeting = 'Selamat Malam';
+    // Logika Rentang Waktu Sesuai Permintaan
+    let timeGreeting = 'Selamat Malam'; // default untuk 19.00 - 00.59
+
+    if (hours >= 1 && hours <= 10) {
+      timeGreeting = 'Selamat Pagi';   // 01.00 - 10.59
+    } else if (hours >= 11 && hours <= 14) {
+      timeGreeting = 'Selamat Siang';  // 11.00 - 14.59
+    } else if (hours >= 15 && hours <= 18) {
+      timeGreeting = 'Selamat Sore';   // 15.00 - 18.59
+    } else if (hours >= 19 || hours === 0) {
+      timeGreeting = 'Selamat Malam';  // 19.00 - 00.59
     }
 
     greetingText.textContent = `${timeGreeting}${nameSuffix}!`;
 
-    // Clock format HH.MM.SS
+    // Format Jam HH.MM.SS
     const hoursStr = String(now.getHours()).padStart(2, '0');
     const minutesStr = String(now.getMinutes()).padStart(2, '0');
     const secondsStr = String(now.getSeconds()).padStart(2, '0');
     clockText.textContent = `${hoursStr}.${minutesStr}.${secondsStr}`;
     
-    // Date format Indonesia
+    // Format Tanggal Indonesia
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     dateText.textContent = now.toLocaleDateString('id-ID', options);
   }
